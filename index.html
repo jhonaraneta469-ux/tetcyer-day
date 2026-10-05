@@ -4,128 +4,321 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#101426">
-  <title>Teacher's Day Wishes 💌 A Letter for My Teachers</title>
-  <meta name="description" content="An animated 3D letter of gratitude for my teachers: flowers, petals, a song, and a letter that unfolds. Open the envelope.">
-  <meta property="og:title" content="Teacher's Day Wishes, A Letter for My Teachers">
-  <meta property="og:description" content="Open the envelope. A 3D letter of gratitude, with flowers, petals and a song, for the teachers who taught me to think, write, code and dream.">
+
+  <title>Teacher's Day Wishes 💌 A Letter for Sir Lester Manreal</title>
+
+  <meta name="description" content="A special Teacher's Day letter for Sir Lester Manreal.">
+  <meta property="og:title" content="Teacher's Day Wishes — A Letter for Sir Lester Manreal">
+  <meta property="og:description" content="A special secret-student Teacher's Day message for Sir Lester Manreal.">
   <meta property="og:type" content="website">
+
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💌%3C/text%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
   <!-- 3D stage -->
-  <canvas id="stage" aria-label="3D animated scene: an envelope with a letter for my teachers"></canvas>
+  <canvas
+    id="stage"
+    aria-label="3D animated scene: an envelope containing a Teacher's Day letter for Sir Lester Manreal">
+  </canvas>
+
 
   <!-- ═══════════ LOADING OVERLAY ═══════════ -->
+
   <div id="loader" class="overlay" role="status" aria-live="polite">
+
     <div class="loader-inner">
-      <p class="loader-eyebrow">September 5 · Teacher's Day</p>
-      <h1 class="script-title">For My Teacher: Lester Manreal</h1>
-      <p class="loader-sub">Blossoming something special for you<span class="ellipsis"><span>.</span><span>.</span><span>.</span></span></p>
-      <div class="progress" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
-      <p class="progress-pct" id="progressPct">0%</p>
-      <p class="progress-label" id="progressLabel">gathering petals…</p>
-      <button id="openBtn" class="btn-gold hidden" type="button">💌 &nbsp;Open Your Letter</button>
-      <p class="credit">♪ “Teacher” Lester Manreal</p>
+
+      <p class="loader-eyebrow">
+        September 5 · Teacher's Day
+      </p>
+
+      <h1 class="script-title">
+        For Sir Lester Manreal
+      </h1>
+
+      <p class="loader-sub">
+        Blossoming something special for you
+        <span class="ellipsis">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
+      </p>
+
+      <div class="progress" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <p class="progress-pct" id="progressPct">
+        0%
+      </p>
+
+      <p class="progress-label" id="progressLabel">
+        gathering petals…
+      </p>
+
+      <button
+        id="openBtn"
+        class="btn-gold hidden"
+        type="button">
+        💌 &nbsp;Open Your Letter
+      </button>
+
+      <p class="credit">
+        ♪ A Teacher's Day Wish for Sir Lester
+      </p>
+
     </div>
   </div>
 
-  <!-- ═══════════ GLOBAL AUDIO CONTROL (above all overlays) ═══════════ -->
-  <div class="top-bar global-top-bar hidden" id="globalTopBar">
-    <button id="muteBtn" class="icon-btn" type="button" title="Mute / unmute the song" aria-label="Mute or unmute the song">🔊</button>
+
+  <!-- ═══════════ GLOBAL AUDIO CONTROL ═══════════ -->
+
+  <div
+    class="top-bar global-top-bar hidden"
+    id="globalTopBar">
+
+    <button
+      id="muteBtn"
+      class="icon-btn"
+      type="button"
+      title="Mute / unmute the song"
+      aria-label="Mute or unmute the song">
+      🔊
+    </button>
+
   </div>
+
 
   <!-- ═══════════ ENVELOPE SCENE UI ═══════════ -->
-  <div id="sceneUi" class="overlay ui-layer hidden">
-    <p id="hint" class="hint">✨ click the envelope to open your letter ✨</p>
-    <button id="kbOpenBtn" class="kb-open hidden" type="button">(or press Enter to open)</button>
-    <p class="credit bottom">♪ “Teacher” by TOMONARI SORA &nbsp;·&nbsp; theme from <em>Assassination Classroom: The Movie</em></p>
+
+  <div
+    id="sceneUi"
+    class="overlay ui-layer hidden">
+
+    <p id="hint" class="hint">
+      ✨ click the envelope to open your letter ✨
+    </p>
+
+    <button
+      id="kbOpenBtn"
+      class="kb-open hidden"
+      type="button">
+      (or press Enter to open)
+    </button>
+
+    <p class="credit bottom">
+      ♪ Teacher's Day Letter &nbsp;·&nbsp; For Sir Lester Manreal
+    </p>
+
   </div>
 
-  <!-- ═══════════ LETTER OVERLAY (the message) ═══════════ -->
-  <div id="letterOverlay" class="overlay letter-overlay hidden" role="dialog" aria-label="A letter to my teachers and professors">
+
+  <!-- ═══════════ LETTER OVERLAY ═══════════ -->
+
+  <div
+    id="letterOverlay"
+    class="overlay letter-overlay hidden"
+    role="dialog"
+    aria-label="A Teacher's Day letter for Sir Lester Manreal">
+
     <article class="letter-paper">
+
       <div class="letter-scroll">
-        <p class="letter-greeting" id="greetingSlot">To my dear Teachers and Professors,</p>
-        <h2 class="letter-heading script-title long">To Those Who Taught Me, and Those Who Walked Beside Me</h2>
+
+
+        <p
+          class="letter-greeting"
+          id="greetingSlot">
+          Dear Sir Lester,
+        </p>
+
+
+        <h2 class="letter-heading script-title long">
+          Happy Teacher's Day, Sir Lester Manreal! 🌸
+        </h2>
+
 
         <aside class="letter-tldr">
-          <p><strong>TL;DR:</strong> You taught me far more than what could be found in books. From my school days at New Horizon High School and Jodhpur Park Boys&#x27; School to my years at IISER Kolkata, you became my teachers, mentors, guides, and, in many ways, my elder brothers and sisters. Through lessons, conversations, laughter, shared meals, stories, failures, and countless ordinary moments, you helped shape not only what I know, but who I have become.</p>
+
+          <p>
+            <strong>TL;DR:</strong>
+            Thank you, Sir Lester, for challenging me, teaching me,
+            and helping me learn. Your lessons may not always be easy,
+            but they help me think harder, improve, and become a better learner.
+          </p>
+
         </aside>
 
-        <p class="letter-lede">Happy Teacher&#x27;s Day. 🌸</p>
 
-        <p>There are those whom life appoints to teach us, and there are those whom life, in its quieter generosity, gives us as companions upon the road; and when I look back upon the years that carried me from the classrooms of New Horizon High School and Jodhpur Park Boys&#x27; School, through the halls and laboratories of IISER Kolkata, I find that I have been fortunate enough to receive both gifts in the same people. For many of you began as my teachers and, somewhere along the way, became something dearer and more enduring: the elder brothers and sisters whom I could look towards when the road ahead appeared uncertain, and whose experience seemed like a lantern held a little farther along the path.</p>
+        <p class="letter-lede">
+          🌸 Happy Teacher's Day, Sir Lester Manreal! 🌸
+        </p>
 
-        <p>You taught me, certainly, the things that books contain and examinations demand: equations, experiments, theories, methods, and the patient discipline of learning. Yet I have come to believe that some of the lessons which remain longest in the heart are those which arrive almost unnoticed, between one conversation and another, after class, in a laboratory, over lunch or dinner, amidst laughter and stories, or in those unhurried moments when a teacher and a student cease, for a little while, to be merely teacher and student and simply become two people sharing something of life.</p>
 
-        <p>I remember those moments perhaps more clearly than I remember many of the lessons themselves. The stories you shared about your own journeys, the mistakes you admitted, the advice offered almost in passing, the laughter over something entirely unrelated to academics, and the simple comfort of knowing that there was someone older and wiser whom I could approach, all became a kind of education of their own. They taught me that knowledge does not live only in books, but also in the lives of those who have walked before us.</p>
+        <p>
+          Dear Sir Lester,
+        </p>
 
-        <p>At IISER Kolkata, that education took another form. You gave me the freedom to question, to explore, to fail, to begin again, and eventually to discover questions of my own. Much of what I do today, whether research, programming, building projects, organising, or pursuing some improbable idea simply because it refuses to leave my mind, grew from that freedom to explore and from the confidence you placed in me before I had fully learned to place it in myself.</p>
 
-        <p>But beyond all of this, you taught me how to navigate life.</p>
+        <p>
+          Happy Teacher's Day! 💐
+        </p>
 
-        <p>There were moments when I did not know what I was doing, where I was going, or whether I was capable of getting there. Sometimes you gave me advice; sometimes a story; sometimes nothing more than a patient ear. You did not always solve the problem, and you did not need to. Sometimes it was enough to know that someone I respected had listened.</p>
 
-        <p>Perhaps that is what makes a teacher become family.</p>
+        <p>
+          I want to take this opportunity to thank you for being our teacher
+          and for everything you have taught us.
+        </p>
 
-        <p>A younger brother does not always need an elder brother to carry him; sometimes he only needs to know that, when the road becomes difficult, there is someone he may turn towards.</p>
 
-        <p>And so, when I remember my school and institute years, I remember people more than chapters. I remember voices, faces, corridors, laboratories, shared meals, laughter, questions, mistakes, encouragement, and the innumerable little moments through which a person quietly grows.</p>
+        <p>
+          I know that sometimes your lessons can be challenging, and there
+          are moments when I really have to think hard to understand them.
+          But even though your teaching can be difficult at times, I realized
+          that those challenges help me learn more.
+        </p>
 
-        <p>The boy who entered those classrooms with more questions than answers eventually became the student who carried those questions into IISER Kolkata, and that student is now trying to research, build, code, create, and discover where those questions might lead.</p>
 
-        <p>Whatever I become, I know I shall never be entirely self-made.</p>
+        <p>
+          Your lessons push me to think, try harder, and not give up easily
+          when I don't understand something right away. Because of that,
+          I can learn something new after all.
+        </p>
 
-        <p class="letter-stanza">Behind every question stands someone who encouraged curiosity.<br>
-          Behind every difficult problem, someone who taught patience.<br>
-          Behind every attempt to build something, someone who once said:</p>
 
-        <p class="letter-quote">“Try.”</p>
+        <p>
+          Thank you for being a teacher who challenges your students instead
+          of simply giving us easy answers. Your lessons may not always be
+          easy, but they help us improve and become better learners.
+        </p>
 
-        <p>To my teachers from New Horizon High School, Jodhpur Park Boys&#x27; School, and IISER Kolkata, thank you not only for teaching me, but for accompanying me; for sharing pieces of your lives with me, for laughing with me, guiding me, challenging me, and believing in me through the many versions of myself that have come and gone.</p>
 
-        <p>Wherever the road takes me next, I shall carry something of you with me.</p>
+        <p>
+          I may not always say it, but I appreciate the effort, patience,
+          and knowledge you share with us. Every lesson gives me something
+          to learn, and I know those lessons can help me in the future.
+        </p>
 
-        <p>And perhaps, one day, when another young student comes to me with an impossible question or an unfinished idea, I shall remember how you treated me.</p>
 
-        <p class="letter-beat">I shall listen.</p>
+        <p>
+          So on this Teacher's Day, I just want to say:
+        </p>
 
-        <p class="letter-beat">I shall smile.</p>
 
-        <p class="letter-beat">And I shall say:</p>
+        <p class="letter-stanza">
+          Thank you, Sir Lester, for challenging me,
+          teaching me, and helping me learn. 💙
+        </p>
 
-        <p class="letter-quote">“Try.”</p>
 
-        <p class="letter-signoff script-title">With love, respect, and endless gratitude,</p>
+        <p>
+          You may not know who wrote this message... 🤫
+        </p>
 
-        <p class="letter-signature script-title">Shuvam</p>
 
-        <p class="letter-coda">Happy Teacher&#x27;s Day. 🌸🇮🇳</p>
+        <p>
+          But one of your students wanted to say thank you.
+        </p>
+
+
+        <p class="letter-beat">
+          Happy Teacher's Day, Sir Lester! 🌸
+        </p>
+
+
+        <p class="letter-signoff script-title">
+          With respect and gratitude,
+        </p>
+
+
+        <p class="letter-signature script-title">
+          — From your student... 🤫
+        </p>
+
+
+        <p class="letter-signature script-title">
+          Your secret student. 😄🔐
+        </p>
+
+
+        <p class="letter-coda">
+          P.S. Can you guess who I am? 👀
+        </p>
+
 
         <div class="geo-card" id="geoCard">
-          <span class="geo-emoji" id="geoEmoji">🌍</span>
-          <span id="geoLine">This wish is traveling through the internet to find you…</span>
+
+          <span
+            class="geo-emoji"
+            id="geoEmoji">
+            🌍
+          </span>
+
+          <span id="geoLine">
+            This secret Teacher's Day wish is traveling through the internet to find you…
+          </span>
+
         </div>
+
 
         <div class="letter-actions">
-          <button id="replayBtn" class="btn-gold small" type="button">🌸 &nbsp;Fold it back &amp; open again</button>
+
+          <button
+            id="replayBtn"
+            class="btn-gold small"
+            type="button">
+            🌸 &nbsp;Fold it back &amp; open again
+          </button>
+
         </div>
+
       </div>
+
     </article>
+
   </div>
 
+
+  <!-- ═══════════ NOSCRIPT ═══════════ -->
+
   <noscript>
+
     <div class="overlay noscript-card">
+
       <div class="loader-inner">
-        <h1 class="script-title">To Those Who Taught Me</h1>
-        <p>Happy Teacher's Day! This 3D experience needs JavaScript, but the wish itself needs nothing: to my teachers from New Horizon High School, Jodhpur Park Boys' School and IISER Kolkata, thank you not only for teaching me, but for accompanying me. 🌸</p>
+
+        <h1 class="script-title">
+          Happy Teacher's Day, Sir Lester Manreal! 🌸
+        </h1>
+
+        <p>
+          Happy Teacher's Day, Sir Lester!
+          Thank you for challenging me, teaching me,
+          and helping me learn. 💙
+        </p>
+
+        <p>
+          — From your secret student. 🤫🔐
+        </p>
+
       </div>
+
     </div>
+
   </noscript>
+
+
+  <!-- ═══════════ EXISTING THREE.JS CONNECTION — DO NOT CHANGE ═══════════ -->
 
   <script type="importmap">
   {
@@ -134,5 +327,11 @@
     }
   }
   </script>
-  <script type="module" src="js/main.js"></script></body>
+
+
+  <!-- ═══════════ EXISTING JAVASCRIPT CONNECTION — DO NOT CHANGE ═══════════ -->
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
 </html>
